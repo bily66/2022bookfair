@@ -1,0 +1,950 @@
+$circle-diameter: (100vw / 15);
+.kv {
+    padding-top: 80px;
+    @mixin px2diameter($key, $width) {
+        $unit: $width / 90;
+        @if $key == 'width' {
+            width: $unit * $circle-diameter;
+        } @else {
+            margin-left: $unit * $circle-diameter;
+        }
+    }
+    .container-fluid {
+        position: relative;
+        height: $circle-diameter * 7;
+        font-size: 0;
+        overflow: hidden;
+    }
+    .group {
+        position: absolute;
+    }
+    .circle {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        height: $circle-diameter;
+        opacity: 0;
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: $circle-diameter;
+        }
+        &.circle-wide {
+            animation: fadeIn 0.1s forwards alternate linear;
+        }
+        &:not(.circle-wide) {
+            animation: flashing 3s infinite forwards alternate linear;
+            &.animate-1 {
+                animation-delay: 0.5s;
+            }
+            &.animate-2 {
+                animation-delay: 0.8s;
+            }
+            &.animate-3 {
+                animation-delay: 0.3s;
+            }
+            &.animate-4 {
+                animation-delay: 0.6s;
+            }
+            &.animate-5 {
+                animation-delay: 0.4s;
+            }
+        }
+    }
+    .grid {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        .line {
+            display: inline-block;
+            height: $circle-diameter;
+            border-radius: 10px;
+        }
+    }
+    .group-1 {
+        top: 0;
+        left: $circle-diameter;
+        .circle-1 {
+            width: 2.5 * $circle-diameter;
+            &::before {
+                background-image: linear-gradient(to right, #009e96 56%, #286096 100%);
+            }
+        }
+        .circle-2 {
+            position: absolute;
+            top: 0;
+            left: 1.5 * $circle-diameter;
+            width: $circle-diameter;
+            &::before {
+                background-color: #d80c18;
+                opacity: 0.25;
+            }
+        }
+        .circle-3 {
+            width: $circle-diameter;
+            margin-left: -15px;
+            &::before {
+                background-color: #d80c18;
+                opacity: 0.25;
+            }
+        }
+        .circle-4 {
+            width: $circle-diameter;
+            margin-left: 15px;
+            z-index: 1;
+            &::before {
+                background-color: #d80c18;
+                opacity: 0.1;
+            }
+        }
+        .circle-5 {
+            width: 1.17 * $circle-diameter;
+            margin-left: -45px;
+            &::before {
+                background-image: linear-gradient(to right, #009a95 15%, #a6678d 100%);
+            }
+        }
+    }
+    .group-2 {
+        top: 0;
+        right: 1.5 * $circle-diameter;
+        .circle-1 {
+            width: 1.17 * $circle-diameter;
+            &::before {
+                background-color: #00954c;
+            }
+        }
+        .circle-2 {
+            margin-left: -0.5 * $circle-diameter;
+            width: $circle-diameter;
+            &::before {
+                background-color: #00954c;
+                opacity: 0.1;
+            }
+        }
+    }
+    .group-3 {
+        top: $circle-diameter * 1;
+        left: -0.1 * $circle-diameter;
+        .circle-1 {
+            width: $circle-diameter;
+            &::before {
+                background-color: #d80c18;
+                opacity: 0.1;
+            }
+        }
+    }
+    .group-4 {
+        top: $circle-diameter * 1;
+        left: $circle-diameter * 5;
+        .circle-1 {
+            width: $circle-diameter;
+            margin-right: -0.5 * $circle-diameter;
+            z-index: 2;
+            &::before {
+                background-color: #d80c18;
+                opacity: 0.25;
+            }
+        }
+        .circle-2 {
+            width: 1.17 * $circle-diameter;
+            margin-right: -0.5 * $circle-diameter;
+            z-index: 1;
+            &::before {
+                background-image: linear-gradient(to right, #8c4984 0%, #be2074 100%);
+            }
+        }
+        .grid {
+            @include px2diameter(width, 134.9);
+            opacity: 0.7;
+            .line-1 {
+                @include px2diameter(width, 4.8);
+                background-color: #9e407f;
+            }
+            .line-2 {
+                @include px2diameter(width, 4.5);
+                @include px2diameter(margin-left, 5.5);
+                background-color: #a63a7d;
+            }
+            .line-3 {
+                @include px2diameter(width, 4.2);
+                @include px2diameter(margin-left, 5.8);
+                background-color: #ab377c;
+            }
+            .line-4 {
+                @include px2diameter(width, 3.8);
+                @include px2diameter(margin-left, 6.1);
+                background-color: #b03179;
+            }
+            .line-5 {
+                @include px2diameter(width, 3.5);
+                @include px2diameter(margin-left, 6.5);
+                background-color: #b22e78;
+            }
+            .line-6 {
+                @include px2diameter(width, 3.2);
+                @include px2diameter(margin-left, 6.8);
+                background-color: #b62a77;
+            }
+            .line-7 {
+                @include px2diameter(width, 2.9);
+                @include px2diameter(margin-left, 7.1);
+                background-color: #b82776;
+            }
+            .line-8 {
+                @include px2diameter(width, 2.6);
+                @include px2diameter(margin-left, 7.4);
+                background-color: #ba2575;
+            }
+            .line-9 {
+                @include px2diameter(width, 2.2);
+                @include px2diameter(margin-left, 7.8);
+                background-color: #bb2475;
+            }
+            .line-10 {
+                @include px2diameter(width, 2);
+                @include px2diameter(margin-left, 8.1);
+                background-color: #bc2275;
+            }
+            .line-11 {
+                @include px2diameter(width, 1.6);
+                @include px2diameter(margin-left, 8.4);
+                background-color: #bd2074;
+            }
+            .line-12 {
+                @include px2diameter(width, 1.3);
+                @include px2diameter(margin-left, 8.8);
+                background-color: #bd2074;
+            }
+            .line-13 {
+                @include px2diameter(width, 1);
+                @include px2diameter(margin-left, 9);
+                background-color: #be2074;
+            }
+            .line-14 {
+                @include px2diameter(width, 0.6);
+                @include px2diameter(margin-left, 9.4);
+                background-color: #be2074;
+            }
+        }
+        .circle-3 {
+            width: $circle-diameter;
+            margin-left: -0.2 * $circle-diameter;
+            &::before {
+                background-color: #ce1b7d;
+                opacity: 0.1;
+            }
+        }
+    }
+    .group-5 {
+        top: $circle-diameter * 1;
+        right: 0.3 * $circle-diameter;
+        .circle-1 {
+            width: 1.17 * $circle-diameter;
+            &::before {
+                background-image: linear-gradient(to right, #5c93cc 56%, #49878f 100%);
+            }
+        }
+    }
+    .group-6 {
+        top: $circle-diameter * 2;
+        left: -0.35 * $circle-diameter;
+        .circle-1 {
+            width: $circle-diameter;
+            margin-right: -0.5 * $circle-diameter;
+            &::before {
+                background-color: #c42d27;
+                opacity: 0.1;
+            }
+        }
+        .circle-2 {
+            width: 2.4 * $circle-diameter;
+            margin-right: -1 * $circle-diameter;
+            &::before {
+                background-color: #c42d27;
+                opacity: 0.65;
+            }
+        }
+        .circle-3 {
+            width: $circle-diameter;
+            margin-right: -0.5 * $circle-diameter;
+            &::before {
+                background-color: #c42d27;
+            }
+        }
+        .grid {
+            @include px2diameter(width, 162);
+            opacity: 0.2;
+            .line {
+                background-color: #c42d27;
+            }
+            .line-1 {
+                @include px2diameter(width, 7.5);
+            }
+            .line-2 {
+                @include px2diameter(width, 7.1);
+                @include px2diameter(margin-left, 2.6);
+            }
+            .line-3 {
+                @include px2diameter(width, 6.6);
+                @include px2diameter(margin-left, 3);
+            }
+            .line-4 {
+                @include px2diameter(width, 6.2);
+                @include px2diameter(margin-left, 3.4);
+            }
+            .line-5 {
+                @include px2diameter(width, 5.8);
+                @include px2diameter(margin-left, 3.8);
+            }
+            .line-6 {
+                @include px2diameter(width, 5.4);
+                @include px2diameter(margin-left, 4.3);
+            }
+            .line-7 {
+                @include px2diameter(width, 5);
+                @include px2diameter(margin-left, 4.7);
+            }
+            .line-8 {
+                @include px2diameter(width, 4.6);
+                @include px2diameter(margin-left, 5);
+            }
+            .line-9 {
+                @include px2diameter(width, 4.2);
+                @include px2diameter(margin-left, 5.5);
+            }
+            .line-10 {
+                @include px2diameter(width, 3.7);
+                @include px2diameter(margin-left, 6);
+            }
+            .line-11 {
+                @include px2diameter(width, 3.3);
+                @include px2diameter(margin-left, 6.4);
+            }
+            .line-12 {
+                @include px2diameter(width, 2.8);
+                @include px2diameter(margin-left, 6.8);
+            }
+            .line-13 {
+                @include px2diameter(width, 2.4);
+                @include px2diameter(margin-left, 7.2);
+            }
+            .line-14 {
+                @include px2diameter(width, 2);
+                @include px2diameter(margin-left, 7.6);
+            }
+            .line-15 {
+                @include px2diameter(width, 1.6);
+                @include px2diameter(margin-left, 8.1);
+            }
+            .line-16 {
+                @include px2diameter(width, 1.2);
+                @include px2diameter(margin-left, 8.5);
+            }
+            .line-17 {
+                @include px2diameter(width, 0.8);
+                @include px2diameter(margin-left, 8.9);
+            }
+        }
+    }
+    .group-7 {
+        top: $circle-diameter * 2;
+        left: 50%;
+        transform: translateX(200%);
+        .circle-1 {
+            width: $circle-diameter;
+            &::before {
+                background-color: #c42d27;
+                opacity: 0.1;
+            }
+        }
+    }
+    .group-8 {
+        top: $circle-diameter * 2;
+        right: 0.3 * $circle-diameter;
+        .circle-1 {
+            width: $circle-diameter;
+            &::before {
+                background-color: #5c93cc;
+                opacity: 0.25;
+            }
+        }
+    }
+    .group-9 {
+        top: $circle-diameter * 3;
+        right: 0;
+        .circle-1 {
+            width: $circle-diameter;
+            margin-right: -0.6 * $circle-diameter;
+            &::before {
+                background-color: #c42d27;
+                opacity: 0.25;
+            }
+        }
+        .circle-2 {
+            width: 0.9 * $circle-diameter;
+            margin-right: -0.6 * $circle-diameter;
+            &::before {
+                background-color: #c42d27;
+            }
+        }
+        .grid {
+            @include px2diameter(width, 134.9);
+            opacity: 0.7;
+            transform: scaleX(-1);
+            .line {
+                background-color: #c42d27;
+            }
+            .line-1 {
+                @include px2diameter(width, 4.8);
+            }
+            .line-2 {
+                @include px2diameter(width, 4.5);
+                @include px2diameter(margin-left, 5.5);
+            }
+            .line-3 {
+                @include px2diameter(width, 4.2);
+                @include px2diameter(margin-left, 5.8);
+            }
+            .line-4 {
+                @include px2diameter(width, 3.8);
+                @include px2diameter(margin-left, 6.1);
+            }
+            .line-5 {
+                @include px2diameter(width, 3.5);
+                @include px2diameter(margin-left, 6.5);
+            }
+            .line-6 {
+                @include px2diameter(width, 3.2);
+                @include px2diameter(margin-left, 6.8);
+            }
+            .line-7 {
+                @include px2diameter(width, 2.9);
+                @include px2diameter(margin-left, 7.1);
+            }
+            .line-8 {
+                @include px2diameter(width, 2.6);
+                @include px2diameter(margin-left, 7.4);
+            }
+            .line-9 {
+                @include px2diameter(width, 2.2);
+                @include px2diameter(margin-left, 7.8);
+            }
+            .line-10 {
+                @include px2diameter(width, 2);
+                @include px2diameter(margin-left, 8.1);
+            }
+            .line-11 {
+                @include px2diameter(width, 1.6);
+                @include px2diameter(margin-left, 8.4);
+            }
+            .line-12 {
+                @include px2diameter(width, 1.3);
+                @include px2diameter(margin-left, 8.8);
+            }
+            .line-13 {
+                @include px2diameter(width, 1);
+                @include px2diameter(margin-left, 9);
+            }
+            .line-14 {
+                @include px2diameter(width, 0.6);
+                @include px2diameter(margin-left, 9.4);
+            }
+        }
+    }
+    .group-10 {
+        top: $circle-diameter * 4;
+        left: -0.1 * $circle-diameter;
+        .circle-1 {
+            width: $circle-diameter;
+            &::before {
+                background-color: #c42d27;
+                opacity: 0.25;
+            }
+        }
+    }
+    .group-11 {
+        top: $circle-diameter * 4;
+        left: 2 * $circle-diameter;
+        .circle-1 {
+            width: $circle-diameter;
+            margin-right: -1 * $circle-diameter;
+            z-index: 2;
+            &::before {
+                background-color: #c42d27;
+                opacity: 0.25;
+            }
+        }
+        .circle-2 {
+            width: 1.5 * $circle-diameter;
+            margin-right: -0.5 * $circle-diameter;
+            z-index: 1;
+            &::before {
+                background-image: linear-gradient(to right, #2d5b94 0%, #ce1b7d 56%);
+            }
+        }
+        .grid {
+            @include px2diameter(width, 162);
+            margin-right: -0.48 * $circle-diameter;
+            opacity: 0.7;
+            .line-1 {
+                @include px2diameter(width, 7.5);
+                background-color: #2a578c;
+            }
+            .line-2 {
+                @include px2diameter(width, 7.1);
+                @include px2diameter(margin-left, 2.6);
+                background-color: #5b558b;
+            }
+            .line-3 {
+                @include px2diameter(width, 6.6);
+                @include px2diameter(margin-left, 3);
+                background-color: #7b4e87;
+            }
+            .line-4 {
+                @include px2diameter(width, 6.2);
+                @include px2diameter(margin-left, 3.4);
+                background-color: #8f4783;
+            }
+            .line-5 {
+                @include px2diameter(width, 5.8);
+                @include px2diameter(margin-left, 3.8);
+                background-color: #9b427f;
+            }
+            .line-6 {
+                @include px2diameter(width, 5.4);
+                @include px2diameter(margin-left, 4.3);
+                background-color: #a63a7d;
+            }
+            .line-7 {
+                @include px2diameter(width, 5);
+                @include px2diameter(margin-left, 4.7);
+                background-color: #ab367b;
+            }
+            .line-8 {
+                @include px2diameter(width, 4.6);
+                @include px2diameter(margin-left, 5);
+                background-color: #b13079;
+            }
+            .line-9 {
+                @include px2diameter(width, 4.2);
+                @include px2diameter(margin-left, 5.5);
+                background-color: #b32c78;
+            }
+            .line-10 {
+                @include px2diameter(width, 3.7);
+                @include px2diameter(margin-left, 6);
+                background-color: #b62a77;
+            }
+            .line-11 {
+                @include px2diameter(width, 3.3);
+                @include px2diameter(margin-left, 6.4);
+                background-color: #b92676;
+            }
+            .line-12 {
+                @include px2diameter(width, 2.8);
+                @include px2diameter(margin-left, 6.8);
+                background-color: #b92475;
+            }
+            .line-13 {
+                @include px2diameter(width, 2.4);
+                @include px2diameter(margin-left, 7.2);
+                background-color: #bb2475;
+            }
+            .line-14 {
+                @include px2diameter(width, 2);
+                @include px2diameter(margin-left, 7.6);
+                background-color: #bc2375;
+            }
+            .line-15 {
+                @include px2diameter(width, 1.6);
+                @include px2diameter(margin-left, 8.1);
+                background-color: #bd2074;
+            }
+            .line-16 {
+                @include px2diameter(width, 1.2);
+                @include px2diameter(margin-left, 8.5);
+                background-color: #bd2074;
+            }
+            .line-17 {
+                @include px2diameter(width, 0.8);
+                @include px2diameter(margin-left, 8.9);
+                background-color: #bd2074;
+            }
+        }
+        .circle-3 {
+            width: $circle-diameter;
+            &::before {
+                background-color: #ce1b7d;
+                opacity: 0.25;
+            }
+        }
+    }
+    .group-12 {
+        top: $circle-diameter * 4;
+        right: $circle-diameter * 1;
+        width: 6.55 * $circle-diameter;
+        .circle-1 {
+            width: $circle-diameter;
+            margin-right: -0.27 * $circle-diameter;
+            z-index: 1;
+            &::before {
+                background-color: #5c93cc;
+                opacity: 0.25;
+            }
+        }
+        .circle-2 {
+            width: 5.27 * $circle-diameter;
+            margin-right: -0.5 * $circle-diameter;
+            &::before {
+                background-image: linear-gradient(to right, #5c93cc 56%, #00954c 100%);
+            }
+        }
+        .circle-3 {
+            width: $circle-diameter;
+            z-index: 1;
+            &::before {
+                background-color: #c42d27;
+                opacity: 0.1;
+            }
+        }
+    }
+    .group-13 {
+        top: $circle-diameter * 5;
+        left: $circle-diameter * -0.65;
+        .circle-1 {
+            width: $circle-diameter;
+            z-index: 1;
+            &::before {
+                background-color: #c42d27;
+            }
+        }
+    }
+    .group-14 {
+        top: $circle-diameter * 5;
+        right: $circle-diameter * 1;
+        .circle-1 {
+            width: 1.17 * $circle-diameter;
+            margin-right: -0.5535 * $circle-diameter;
+            z-index: 1;
+            &::before {
+                background-image: linear-gradient(to right, #00986e 0%, #00954c 100%);
+            }
+        }
+        .grid {
+            @include px2diameter(width, 257.1);
+            margin-right: -0.5 * $circle-diameter;
+            .line-1 {
+                @include px2diameter(width, 10);
+                background-color: #128e4a;
+            }
+            .line-2 {
+                @include px2diameter(width, 9.9);
+                @include px2diameter(margin-left, 1);
+                background-color: #128e4a;
+            }
+            .line-3 {
+                @include px2diameter(width, 9.4);
+                @include px2diameter(margin-left, 1.4);
+                background-color: #108e4f;
+            }
+            .line-4 {
+                @include px2diameter(width, 9);
+                @include px2diameter(margin-left, 1.7);
+                background-color: #128e55;
+            }
+            .line-5 {
+                @include px2diameter(width, 8.6);
+                @include px2diameter(margin-left, 2.1);
+                background-color: #148e59;
+            }
+            .line-6 {
+                @include px2diameter(width, 8.2);
+                @include px2diameter(margin-left, 2.6);
+                background-color: #178e5f;
+            }
+            .line-7 {
+                @include px2diameter(width, 7.8);
+                @include px2diameter(margin-left, 3);
+                background-color: #168e65;
+            }
+            .line-8 {
+                @include px2diameter(width, 7.4);
+                @include px2diameter(margin-left, 3.4);
+                background-color: #188e6b;
+            }
+            .line-9 {
+                @include px2diameter(width, 7);
+                @include px2diameter(margin-left, 3.8);
+                background-color: #1b8f70;
+            }
+            .line-10 {
+                @include px2diameter(width, 6.5);
+                @include px2diameter(margin-left, 4.3);
+                background-color: #1a8f76;
+            }
+            .line-11 {
+                @include px2diameter(width, 6);
+                @include px2diameter(margin-left, 4.7);
+                background-color: #1e8e7b;
+            }
+            .line-12 {
+                @include px2diameter(width, 5.6);
+                @include px2diameter(margin-left, 5.1);
+                background-color: #208e81;
+            }
+            .line-13 {
+                @include px2diameter(width, 5.2);
+                @include px2diameter(margin-left, 5.5);
+                background-color: #208e87;
+            }
+            .line-14 {
+                @include px2diameter(width, 4.8);
+                @include px2diameter(margin-left, 6);
+                background-color: #268e8d;
+            }
+            .line-15 {
+                @include px2diameter(width, 4.4);
+                @include px2diameter(margin-left, 6.4);
+                background-color: #2d8e92;
+            }
+            .line-16 {
+                @include px2diameter(width, 3.9);
+                @include px2diameter(margin-left, 6.8);
+                background-color: #308e98;
+            }
+            .line-17 {
+                @include px2diameter(width, 3.5);
+                @include px2diameter(margin-left, 7.2);
+                background-color: #368f9c;
+            }
+            .line-18 {
+                @include px2diameter(width, 3.1);
+                @include px2diameter(margin-left, 7.6);
+                background-color: #3c8da1;
+            }
+            .line-19 {
+                @include px2diameter(width, 2.7);
+                @include px2diameter(margin-left, 8.1);
+                background-color: #408da6;
+            }
+            .line-20 {
+                @include px2diameter(width, 2.2);
+                @include px2diameter(margin-left, 8.5);
+                background-color: #468daa;
+            }
+            .line-21 {
+                @include px2diameter(width, 1.8);
+                @include px2diameter(margin-left, 8.9);
+                background-color: #4b8daf;
+            }
+            .line-22 {
+                @include px2diameter(width, 1.4);
+                @include px2diameter(margin-left, 9.3);
+                background-color: #4e8cb3;
+            }
+            .line-23 {
+                @include px2diameter(width, 1);
+                @include px2diameter(margin-left, 9.8);
+                background-color: #5c93cc;
+            }
+            .line-24 {
+                @include px2diameter(width, 0.5);
+                @include px2diameter(margin-left, 10);
+                background-color: #5c93cc;
+            }
+        }
+        .circle-2 {
+            width: $circle-diameter;
+            &::before {
+                background-color: #5c93cc;
+                opacity: 0.25;
+            }
+        }
+    }
+    .group-15 {
+        top: $circle-diameter * 6;
+        left: $circle-diameter * 2.3;
+        .grid {
+            @include px2diameter(width, 162);
+            margin-right: -0.5 * $circle-diameter;
+            opacity: 0.7;
+            transform: scaleX(-1);
+            .line {
+                background-color: #c42d27;
+            }
+            .line-1 {
+                @include px2diameter(width, 7.5);
+            }
+            .line-2 {
+                @include px2diameter(width, 7.1);
+                @include px2diameter(margin-left, 2.6);
+            }
+            .line-3 {
+                @include px2diameter(width, 6.6);
+                @include px2diameter(margin-left, 3);
+            }
+            .line-4 {
+                @include px2diameter(width, 6.2);
+                @include px2diameter(margin-left, 3.4);
+            }
+            .line-5 {
+                @include px2diameter(width, 5.8);
+                @include px2diameter(margin-left, 3.8);
+            }
+            .line-6 {
+                @include px2diameter(width, 5.4);
+                @include px2diameter(margin-left, 4.3);
+            }
+            .line-7 {
+                @include px2diameter(width, 5);
+                @include px2diameter(margin-left, 4.7);
+            }
+            .line-8 {
+                @include px2diameter(width, 4.6);
+                @include px2diameter(margin-left, 5);
+            }
+            .line-9 {
+                @include px2diameter(width, 4.2);
+                @include px2diameter(margin-left, 5.5);
+            }
+            .line-10 {
+                @include px2diameter(width, 3.7);
+                @include px2diameter(margin-left, 6);
+            }
+            .line-11 {
+                @include px2diameter(width, 3.3);
+                @include px2diameter(margin-left, 6.4);
+            }
+            .line-12 {
+                @include px2diameter(width, 2.8);
+                @include px2diameter(margin-left, 6.8);
+            }
+            .line-13 {
+                @include px2diameter(width, 2.4);
+                @include px2diameter(margin-left, 7.2);
+            }
+            .line-14 {
+                @include px2diameter(width, 2);
+                @include px2diameter(margin-left, 7.6);
+            }
+            .line-15 {
+                @include px2diameter(width, 1.6);
+                @include px2diameter(margin-left, 8.1);
+            }
+            .line-16 {
+                @include px2diameter(width, 1.2);
+                @include px2diameter(margin-left, 8.5);
+            }
+            .line-17 {
+                @include px2diameter(width, 0.8);
+                @include px2diameter(margin-left, 8.9);
+            }
+        }
+        .circle::before {
+            background-color: #c42d27;
+        }
+        .circle-1 {
+            width: 1.6 * $circle-diameter;
+        }
+        .circle-2 {
+            width: $circle-diameter;
+            margin-left: -0.23 * $circle-diameter;
+            &::before {
+                opacity: 0.25;
+            }
+        }
+        .circle-3 {
+            width: $circle-diameter;
+            margin-left: -0.5 * $circle-diameter;
+            &::before {
+                opacity: 0.25;
+            }
+        }
+    }
+    .group-16 {
+        top: $circle-diameter * 6;
+        left: 50%;
+        transform: translateX(200%);
+        .circle-1 {
+            width: $circle-diameter;
+            &::before {
+                background-color: #c42d27;
+                opacity: 0.1;
+            }
+        }
+    }
+    .text {
+        position: absolute;
+        top: $circle-diameter * 2;
+        left: $circle-diameter * 3;
+        h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: $circle-diameter;
+            letter-spacing: -0.025em;
+            transform: scaleX(0.9);
+            transform-origin: left center;
+            line-height: 1;
+            span {
+                display: inline-block;
+                transform: scaleX(1.15);
+            }
+        }
+        p {
+            padding-top: $circle-diameter * 0.1;
+            padding-left: $circle-diameter * (3*0.9);
+            font-size: $circle-diameter * 0.35;
+            line-height: $circle-diameter * 0.4;
+            strong {
+                color: #fff799;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flashing {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    15% {
+        opacity: 0.1;
+    }
+    20% {
+        opacity: 0.4;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    30% {
+        opacity: 0.3;
+    }
+    35% {
+        opacity: 0.1;
+    }
+    40% {
+        opacity: 0.5;
+    }
+    45% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}

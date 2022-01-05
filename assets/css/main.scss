@@ -1,0 +1,13 @@
+// Required
+@import "../../node_modules/bootstrap/scss/functions"; // 必要的方法
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500&family=Noto+Serif+TC:wght@700&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import "variables"; // 自行定義的變數路徑
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "../../node_modules/bootstrap/scss/bootstrap"; // Bootstrap 完整原始碼
+
+nav.fixed-top {
+    background-color: rgba($black, 0.5);
+    backdrop-filter: blur(20px);
+}
+@import "keyvision";
