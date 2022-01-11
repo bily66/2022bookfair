@@ -1,14 +1,14 @@
 $circle-diameter: (100vw / 15);
+@mixin px2diameter($key, $width) {
+    $unit: $width / 90;
+    @if $key == 'width' {
+        width: $unit * $circle-diameter;
+    } @else {
+        margin-left: $unit * $circle-diameter;
+    }
+}
 .kv {
     padding-top: 80px;
-    @mixin px2diameter($key, $width) {
-        $unit: $width / 90;
-        @if $key == 'width' {
-            width: $unit * $circle-diameter;
-        } @else {
-            margin-left: $unit * $circle-diameter;
-        }
-    }
     .container-fluid {
         position: relative;
         height: $circle-diameter * 7;
@@ -18,23 +18,16 @@ $circle-diameter: (100vw / 15);
     .group {
         position: absolute;
     }
-    .circle {
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
+    .kv-circle {
         height: $circle-diameter;
         opacity: 0;
         &::before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 100%;
             border-radius: $circle-diameter;
         }
-        &.circle-wide {
+        &.kv-circle-wide {
             animation: fadeIn 0.1s forwards alternate linear;
         }
-        &:not(.circle-wide) {
+        &:not(.kv-circle-wide) {
             animation: flashing 3s infinite forwards alternate linear;
             &.animate-1 {
                 animation-delay: 0.5s;
@@ -53,26 +46,21 @@ $circle-diameter: (100vw / 15);
             }
         }
     }
-    .grid {
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
+    .kv-grid {
         .line {
-            display: inline-block;
             height: $circle-diameter;
-            border-radius: 10px;
         }
     }
     .group-1 {
         top: 0;
         left: $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: 2.5 * $circle-diameter;
             &::before {
                 background-image: linear-gradient(to right, #009e96 56%, #286096 100%);
             }
         }
-        .circle-2 {
+        .kv-circle-2 {
             position: absolute;
             top: 0;
             left: 1.5 * $circle-diameter;
@@ -82,7 +70,7 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.25;
             }
         }
-        .circle-3 {
+        .kv-circle-3 {
             width: $circle-diameter;
             margin-left: -15px;
             &::before {
@@ -90,7 +78,7 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.25;
             }
         }
-        .circle-4 {
+        .kv-circle-4 {
             width: $circle-diameter;
             margin-left: 15px;
             z-index: 1;
@@ -99,7 +87,7 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.1;
             }
         }
-        .circle-5 {
+        .kv-circle-5 {
             width: 1.17 * $circle-diameter;
             margin-left: -45px;
             &::before {
@@ -110,13 +98,13 @@ $circle-diameter: (100vw / 15);
     .group-2 {
         top: 0;
         right: 1.5 * $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: 1.17 * $circle-diameter;
             &::before {
                 background-color: #00954c;
             }
         }
-        .circle-2 {
+        .kv-circle-2 {
             margin-left: -0.5 * $circle-diameter;
             width: $circle-diameter;
             &::before {
@@ -128,7 +116,7 @@ $circle-diameter: (100vw / 15);
     .group-3 {
         top: $circle-diameter * 1;
         left: -0.1 * $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             &::before {
                 background-color: #d80c18;
@@ -139,7 +127,7 @@ $circle-diameter: (100vw / 15);
     .group-4 {
         top: $circle-diameter * 1;
         left: $circle-diameter * 5;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             margin-right: -0.5 * $circle-diameter;
             z-index: 2;
@@ -148,7 +136,7 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.25;
             }
         }
-        .circle-2 {
+        .kv-circle-2 {
             width: 1.17 * $circle-diameter;
             margin-right: -0.5 * $circle-diameter;
             z-index: 1;
@@ -156,7 +144,7 @@ $circle-diameter: (100vw / 15);
                 background-image: linear-gradient(to right, #8c4984 0%, #be2074 100%);
             }
         }
-        .grid {
+        .kv-grid {
             @include px2diameter(width, 134.9);
             opacity: 0.7;
             .line-1 {
@@ -229,7 +217,7 @@ $circle-diameter: (100vw / 15);
                 background-color: #be2074;
             }
         }
-        .circle-3 {
+        .kv-circle-3 {
             width: $circle-diameter;
             margin-left: -0.2 * $circle-diameter;
             &::before {
@@ -241,7 +229,7 @@ $circle-diameter: (100vw / 15);
     .group-5 {
         top: $circle-diameter * 1;
         right: 0.3 * $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: 1.17 * $circle-diameter;
             &::before {
                 background-image: linear-gradient(to right, #5c93cc 56%, #49878f 100%);
@@ -251,7 +239,7 @@ $circle-diameter: (100vw / 15);
     .group-6 {
         top: $circle-diameter * 2;
         left: -0.35 * $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             margin-right: -0.5 * $circle-diameter;
             &::before {
@@ -259,7 +247,7 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.1;
             }
         }
-        .circle-2 {
+        .kv-circle-2 {
             width: 2.4 * $circle-diameter;
             margin-right: -1 * $circle-diameter;
             &::before {
@@ -267,14 +255,14 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.65;
             }
         }
-        .circle-3 {
+        .kv-circle-3 {
             width: $circle-diameter;
             margin-right: -0.5 * $circle-diameter;
             &::before {
                 background-color: #c42d27;
             }
         }
-        .grid {
+        .kv-grid {
             @include px2diameter(width, 162);
             opacity: 0.2;
             .line {
@@ -353,7 +341,7 @@ $circle-diameter: (100vw / 15);
         top: $circle-diameter * 2;
         left: 50%;
         transform: translateX(200%);
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             &::before {
                 background-color: #c42d27;
@@ -364,7 +352,7 @@ $circle-diameter: (100vw / 15);
     .group-8 {
         top: $circle-diameter * 2;
         right: 0.3 * $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             &::before {
                 background-color: #5c93cc;
@@ -375,7 +363,7 @@ $circle-diameter: (100vw / 15);
     .group-9 {
         top: $circle-diameter * 3;
         right: 0;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             margin-right: -0.6 * $circle-diameter;
             &::before {
@@ -383,14 +371,14 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.25;
             }
         }
-        .circle-2 {
+        .kv-circle-2 {
             width: 0.9 * $circle-diameter;
             margin-right: -0.6 * $circle-diameter;
             &::before {
                 background-color: #c42d27;
             }
         }
-        .grid {
+        .kv-grid {
             @include px2diameter(width, 134.9);
             opacity: 0.7;
             transform: scaleX(-1);
@@ -457,7 +445,7 @@ $circle-diameter: (100vw / 15);
     .group-10 {
         top: $circle-diameter * 4;
         left: -0.1 * $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             &::before {
                 background-color: #c42d27;
@@ -468,7 +456,7 @@ $circle-diameter: (100vw / 15);
     .group-11 {
         top: $circle-diameter * 4;
         left: 2 * $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             margin-right: -1 * $circle-diameter;
             z-index: 2;
@@ -477,7 +465,7 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.25;
             }
         }
-        .circle-2 {
+        .kv-circle-2 {
             width: 1.5 * $circle-diameter;
             margin-right: -0.5 * $circle-diameter;
             z-index: 1;
@@ -485,7 +473,7 @@ $circle-diameter: (100vw / 15);
                 background-image: linear-gradient(to right, #2d5b94 0%, #ce1b7d 56%);
             }
         }
-        .grid {
+        .kv-grid {
             @include px2diameter(width, 162);
             margin-right: -0.48 * $circle-diameter;
             opacity: 0.7;
@@ -574,7 +562,7 @@ $circle-diameter: (100vw / 15);
                 background-color: #bd2074;
             }
         }
-        .circle-3 {
+        .kv-circle-3 {
             width: $circle-diameter;
             &::before {
                 background-color: #ce1b7d;
@@ -586,7 +574,7 @@ $circle-diameter: (100vw / 15);
         top: $circle-diameter * 4;
         right: $circle-diameter * 1;
         width: 6.55 * $circle-diameter;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             margin-right: -0.27 * $circle-diameter;
             z-index: 1;
@@ -595,14 +583,14 @@ $circle-diameter: (100vw / 15);
                 opacity: 0.25;
             }
         }
-        .circle-2 {
+        .kv-circle-2 {
             width: 5.27 * $circle-diameter;
             margin-right: -0.5 * $circle-diameter;
             &::before {
                 background-image: linear-gradient(to right, #5c93cc 56%, #00954c 100%);
             }
         }
-        .circle-3 {
+        .kv-circle-3 {
             width: $circle-diameter;
             z-index: 1;
             &::before {
@@ -614,7 +602,7 @@ $circle-diameter: (100vw / 15);
     .group-13 {
         top: $circle-diameter * 5;
         left: $circle-diameter * -0.65;
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             z-index: 1;
             &::before {
@@ -625,7 +613,7 @@ $circle-diameter: (100vw / 15);
     .group-14 {
         top: $circle-diameter * 5;
         right: $circle-diameter * 1;
-        .circle-1 {
+        .kv-circle-1 {
             width: 1.17 * $circle-diameter;
             margin-right: -0.5535 * $circle-diameter;
             z-index: 1;
@@ -633,7 +621,7 @@ $circle-diameter: (100vw / 15);
                 background-image: linear-gradient(to right, #00986e 0%, #00954c 100%);
             }
         }
-        .grid {
+        .kv-grid {
             @include px2diameter(width, 257.1);
             margin-right: -0.5 * $circle-diameter;
             .line-1 {
@@ -756,7 +744,7 @@ $circle-diameter: (100vw / 15);
                 background-color: #5c93cc;
             }
         }
-        .circle-2 {
+        .kv-circle-2 {
             width: $circle-diameter;
             &::before {
                 background-color: #5c93cc;
@@ -767,7 +755,7 @@ $circle-diameter: (100vw / 15);
     .group-15 {
         top: $circle-diameter * 6;
         left: $circle-diameter * 2.3;
-        .grid {
+        .kv-grid {
             @include px2diameter(width, 162);
             margin-right: -0.5 * $circle-diameter;
             opacity: 0.7;
@@ -843,20 +831,20 @@ $circle-diameter: (100vw / 15);
                 @include px2diameter(margin-left, 8.9);
             }
         }
-        .circle::before {
+        .kv-circle::before {
             background-color: #c42d27;
         }
-        .circle-1 {
+        .kv-circle-1 {
             width: 1.6 * $circle-diameter;
         }
-        .circle-2 {
+        .kv-circle-2 {
             width: $circle-diameter;
             margin-left: -0.23 * $circle-diameter;
             &::before {
                 opacity: 0.25;
             }
         }
-        .circle-3 {
+        .kv-circle-3 {
             width: $circle-diameter;
             margin-left: -0.5 * $circle-diameter;
             &::before {
@@ -868,7 +856,7 @@ $circle-diameter: (100vw / 15);
         top: $circle-diameter * 6;
         left: 50%;
         transform: translateX(200%);
-        .circle-1 {
+        .kv-circle-1 {
             width: $circle-diameter;
             &::before {
                 background-color: #c42d27;
@@ -903,7 +891,26 @@ $circle-diameter: (100vw / 15);
         }
     }
 }
-
+.kv-circle {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+.kv-grid {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    .line {
+        display: inline-block;
+        border-radius: 10px;
+    }
+}
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -912,7 +919,6 @@ $circle-diameter: (100vw / 15);
         opacity: 1;
     }
 }
-
 @keyframes flashing {
     0% {
         opacity: 0;
@@ -948,3 +954,4 @@ $circle-diameter: (100vw / 15);
         opacity: 1;
     }
 }
+
