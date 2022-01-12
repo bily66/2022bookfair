@@ -8,11 +8,20 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap"; // Bootstrap 完整原始碼
 
+body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+}
+
 nav.fixed-top {
     background-color: rgba($black, 0.5);
     backdrop-filter: blur(20px);
 }
+
 @import "keyvision";
+@import "slick";
 
 $circle-diameter: 90px;
 main {
@@ -38,15 +47,29 @@ main {
         }
         &.plan {
             .plan-item {
+                @include media-breakpoint-up(lg) {
+                    float: none !important;
+                    width: 230px !important;
+                }
                 .h4 {
                     @include media-breakpoint-up(lg) {
                         margin-left: -$grid-gutter-width / 2;
                         margin-right: -$grid-gutter-width / 2;
                     }
                 }
+                img {
+                    width: 220px;
+                    @include media-breakpoint-up(lg) {
+                        width: 100%;
+                    }
+                }
                 .btn {
+                    width: 220px;
                     color: $white;
                     background-color: rgba($white, 0.3);
+                    @include media-breakpoint-up(lg) {
+                        width: 100%;
+                    }
                     &:hover {
                         background-color: rgba($white, 0.4);
                     }
