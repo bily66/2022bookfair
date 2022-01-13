@@ -49,10 +49,10 @@ main {
             .plan-item {
                 @include media-breakpoint-up(lg) {
                     float: none !important;
-                    width: 230px !important;
+                    width: calc((100% - ( 1.25rem * 3 ) - (30px * 4)) / 4 ) !important;
                 }
                 .h4 {
-                    @include media-breakpoint-up(lg) {
+                    @include media-breakpoint-up(xl) {
                         margin-left: -$grid-gutter-width / 2;
                         margin-right: -$grid-gutter-width / 2;
                     }
@@ -74,6 +74,68 @@ main {
                         background-color: rgba($white, 0.4);
                     }
                 }
+            }
+        }
+        .share-item {
+            background-color: rgba($white, 0.1);
+            @include media-breakpoint-up(lg) {
+                &:nth-child(odd) {
+                    background-color: rgba($white, 0.1);
+                }
+                &:nth-child(even) {
+                    background-color: $black;
+                }
+            }
+            hr {
+                display: block;
+                width: 40px;
+                height: 2px;
+                margin: auto;
+                background-color: $white;
+                border: 0;
+                opacity: 1;
+            }
+            .btn {
+                max-width: 150px;
+                color: $white;
+                background-color: rgba($white, 0.3);
+                @include media-breakpoint-up(lg) {
+                    width: 100%;
+                }
+                &:hover {
+                    background-color: rgba($white, 0.4);
+                }
+            }
+        }
+        .host-item {
+            position: relative;
+            padding: 0 2.5px;
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 66%;
+                background: linear-gradient(0deg, $black 0%, rgba($black, 0) 100%);
+                z-index: 1;
+            }
+            .txt {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2;
+            }
+            hr {
+                display: block;
+                width: 40px;
+                height: 2px;
+                margin: 10px auto;
+                background-color: $white;
+                border: 0;
+                opacity: 1;
             }
         }
     }
@@ -107,6 +169,12 @@ main {
         }
         .group-4 {
             margin-left: $circle-diameter;
+            &.group-4-2 {
+                margin-left: 0.5 * $circle-diameter;
+            }
+            &.group-4-3 {
+                margin-left: 0.3 * $circle-diameter;
+            }
             .kv-circle-1 {
                 width: $circle-diameter;
                 margin-right: -0.5 * $circle-diameter;
@@ -202,7 +270,7 @@ main {
                 margin-left: -1 * $circle-diameter;
             }
             &.group-15-2 {
-                margin-left: -0.6 * $circle-diameter;
+                margin-left: -0.275 * $circle-diameter;
             }
             .kv-grid {
                 @include px2diameter(width, 162);
@@ -306,7 +374,7 @@ main {
                 margin-left: -0.3 * $circle-diameter;
             }
             &.group-14-2 {
-                margin-left: 0.6 * $circle-diameter;
+                margin-left: 0.4 * $circle-diameter;
             }
             .kv-circle-1 {
                 width: 1.17 * $circle-diameter;

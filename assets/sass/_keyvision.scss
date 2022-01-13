@@ -880,17 +880,21 @@ $circle-diameter-w: (100vw / 15);
     }
     .text {
         position: absolute;
-        @media screen and (max-width: 1023px) {
+        @media screen and (max-width: 1199px) {
             top: $circle-diameter * 2.25;
             left: 50%;
             width: 100vw;
             letter-spacing: -0.025em;
             transform: translateX(-50%);
         }
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 768px) and (max-width: 991px) {
             width: 720px;
         }
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+            width: 960px;
+            text-align: center;
+        }
+        @media screen and (min-width: 1200px) {
             top: $circle-diameter * 2;
             left: $circle-diameter-w * 3;
         }

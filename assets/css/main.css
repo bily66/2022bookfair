@@ -8889,7 +8889,7 @@ nav.fixed-top {
   position: absolute;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1199px) {
   .kv .text {
     top: 28.125vh;
     left: 50%;
@@ -8900,13 +8900,20 @@ nav.fixed-top {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .kv .text {
     width: 720px;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .kv .text {
+    width: 960px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .kv .text {
     top: 25vh;
     left: 20vw;
@@ -9132,6 +9139,7 @@ nav.fixed-top {
   -webkit-transform: translateY(-65%);
           transform: translateY(-65%);
   cursor: pointer;
+  z-index: 5;
 }
 
 @media (min-width: 992px) {
@@ -9154,6 +9162,12 @@ nav.fixed-top {
 
 @media (min-width: 992px) {
   .slick-prev {
+    left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .slick-prev {
     left: auto;
     right: 100%;
   }
@@ -9164,6 +9178,12 @@ nav.fixed-top {
 }
 
 @media (min-width: 992px) {
+  .slick-next {
+    right: 0;
+  }
+}
+
+@media (min-width: 1200px) {
   .slick-next {
     left: 100%;
     right: auto;
@@ -9271,6 +9291,59 @@ nav.fixed-top {
   }
 }
 
+.share-carousel {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (min-width: 576px) {
+  .share-carousel {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .share-carousel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .share-carousel .slick-track {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .share-carousel .slick-track .slick-slide {
+    float: none;
+    height: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .share-carousel .slick-track p {
+    height: calc(1.125rem * 1.4 * 3);
+  }
+}
+
+@media (min-width: 1200px) {
+  .share-carousel .slick-track p {
+    height: calc(1.125rem * 1.4 * 2);
+  }
+}
+
+.book-carousel {
+  margin-bottom: 100px;
+}
+
+@media (min-width: 992px) {
+  .book-carousel {
+    margin-bottom: 150px;
+  }
+}
+
 main {
   padding-top: 75px;
   padding-bottom: 75px;
@@ -9304,11 +9377,11 @@ main section {
 @media (min-width: 992px) {
   main section.plan .plan-item {
     float: none !important;
-    width: 230px !important;
+    width: calc((100% - ( 1.25rem * 3 ) - (30px * 4)) / 4) !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   main section.plan .plan-item .h4 {
     margin-left: -1.25rem;
     margin-right: -1.25rem;
@@ -9339,6 +9412,81 @@ main section.plan .plan-item .btn {
 
 main section.plan .plan-item .btn:hover {
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+main section .share-item {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 992px) {
+  main section .share-item:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  main section .share-item:nth-child(even) {
+    background-color: #000;
+  }
+}
+
+main section .share-item hr {
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: auto;
+  background-color: #fff;
+  border: 0;
+  opacity: 1;
+}
+
+main section .share-item .btn {
+  max-width: 150px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (min-width: 992px) {
+  main section .share-item .btn {
+    width: 100%;
+  }
+}
+
+main section .share-item .btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+main section .host-item {
+  position: relative;
+  padding: 0 2.5px;
+}
+
+main section .host-item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 66%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#000), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
+
+main section .host-item .txt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+main section .host-item hr {
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 10px auto;
+  background-color: #fff;
+  border: 0;
+  opacity: 1;
 }
 
 main .section-title {
@@ -9377,6 +9525,14 @@ main .section-title .kv-grid .line {
 
 main .section-title .group-4 {
   margin-left: 90px;
+}
+
+main .section-title .group-4.group-4-2 {
+  margin-left: 45px;
+}
+
+main .section-title .group-4.group-4-3 {
+  margin-left: 27px;
 }
 
 main .section-title .group-4 .kv-circle-1 {
@@ -9493,7 +9649,7 @@ main .section-title .group-15.group-15-1 {
 }
 
 main .section-title .group-15.group-15-2 {
-  margin-left: -54px;
+  margin-left: -24.75px;
 }
 
 main .section-title .group-15 .kv-grid {
@@ -9623,7 +9779,7 @@ main .section-title .group-14.group-14-1 {
 }
 
 main .section-title .group-14.group-14-2 {
-  margin-left: 54px;
+  margin-left: 36px;
 }
 
 main .section-title .group-14 .kv-circle-1 {
