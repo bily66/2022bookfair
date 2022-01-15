@@ -77,7 +77,7 @@ $('.enterprise-carousel').slick({
 	]
 });
 
-$('.bootombar').hide();
+$('.bottombar').hide();
 $(function () {
 	let width = $(window).width();
 	let height = $(window).height();
@@ -85,9 +85,9 @@ $(function () {
 	$(window).on('scroll', function () {
 		let scroll = $(window).scrollTop();
 		if ( scroll > kvHeight ) {
-			$('.bootombar').fadeIn();
+			$('.bottombar').fadeIn();
 		} else {
-			$('.bootombar').fadeOut();
+			$('.bottombar').fadeOut();
 		}
 		console.log(scroll);
 	});
