@@ -76,3 +76,19 @@ $('.enterprise-carousel').slick({
 		}
 	]
 });
+
+$('.bootombar').hide();
+$(function () {
+	let width = $(window).width();
+	let height = $(window).height();
+	let kvHeight = $('header.kv').outerHeight();
+	$(window).on('scroll', function () {
+		let scroll = $(window).scrollTop();
+		if ( scroll > kvHeight ) {
+			$('.bootombar').fadeIn();
+		} else {
+			$('.bootombar').fadeOut();
+		}
+		console.log(scroll);
+	});
+});
