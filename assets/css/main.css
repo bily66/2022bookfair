@@ -9286,8 +9286,8 @@ nav.fixed-top {
   .course-carousel .slick-slide .slide-content .txt {
     width: calc(100% - 270px);
     margin-top: 0;
-    margin-bottom: 25px;
-    margin-left: -40px;
+    margin-bottom: 15px;
+    margin-left: -15px;
   }
 }
 
@@ -9307,7 +9307,24 @@ nav.fixed-top {
   .share-carousel {
     padding-left: 0;
     padding-right: 0;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(56%, #009e96), to(#286096));
+    background-image: linear-gradient(to right, #009e96 56%, #286096 100%);
   }
+}
+
+.share-carousel .slick-list {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(56%, #009e96), to(#286096));
+  background-image: linear-gradient(to right, #009e96 56%, #286096 100%);
+}
+
+@media (min-width: 992px) {
+  .share-carousel .slick-list {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.share-carousel .slick-track {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 992px) {
@@ -9315,6 +9332,7 @@ nav.fixed-top {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    background-color: transparent;
   }
   .share-carousel .slick-track .slick-slide {
     float: none;
@@ -9340,19 +9358,19 @@ nav.fixed-top {
 
 @media (min-width: 992px) {
   .book-carousel {
-    margin-bottom: 150px;
+    margin-bottom: 80px;
   }
 }
 
 main {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 55px;
+  padding-bottom: 55px;
 }
 
 @media (min-width: 992px) {
   main {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
@@ -9420,10 +9438,7 @@ main section .share-item {
 
 @media (min-width: 992px) {
   main section .share-item:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  main section .share-item:nth-child(even) {
-    background-color: #000;
+    background-color: rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -9439,8 +9454,14 @@ main section .share-item hr {
 
 main section .share-item .btn {
   max-width: 150px;
+  width: 100%;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+main section .share-item .btn:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
 }
 
 @media (min-width: 992px) {
@@ -9948,5 +9969,16 @@ main .section-title .group-14 .kv-circle-2 {
 main .section-title .group-14 .kv-circle-2::before {
   background-color: #5c93cc;
   opacity: 0.25;
+}
+
+.bottombar {
+  background-image: -webkit-gradient(linear, left top, right top, from(#2d5b94), color-stop(56%, #ce1b7d));
+  background-image: linear-gradient(to right, #2d5b94 0%, #ce1b7d 56%);
+  z-index: 5;
+}
+
+.bottombar:hover .btn-light {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=main.css.map */

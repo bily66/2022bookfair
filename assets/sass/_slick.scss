@@ -126,8 +126,8 @@
                 @include media-breakpoint-up(lg) {
                     width: calc(100% - 270px);
                     margin-top: 0;
-                    margin-bottom: 25px;
-                    margin-left: -40px;
+                    margin-bottom: 15px;
+                    margin-left: -15px;
                 }
             }
         }
@@ -144,10 +144,19 @@
     @include media-breakpoint-up(lg) {
         padding-left: 0;
         padding-right: 0;
+        background-image: linear-gradient(to right, #009e96 56%, #286096 100%);
+    }
+    .slick-list {
+        background-image: linear-gradient(to right, #009e96 56%, #286096 100%);
+        @include media-breakpoint-up(lg) {
+            background: rgba($black, 0.2);
+        }
     }
     .slick-track {
+        background-color: rgba($black, 0.2);
         @include media-breakpoint-up(lg) {
             display: flex;
+            background-color: transparent;
             .slick-slide {
                 float: none;
                 height: auto;
@@ -167,6 +176,6 @@
 .book-carousel {
     margin-bottom: 100px;
     @include media-breakpoint-up(lg) {
-        margin-bottom: 150px;
+        margin-bottom: 80px;
     }
 }

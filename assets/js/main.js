@@ -61,6 +61,21 @@ $('.course-carousel').slick({
 	prevArrow: '<button type="button" class="slick-prev"><span class="material-icons-round">arrow_back_ios</span></button>',
 	nextArrow: '<button type="button" class="slick-next"><span class="material-icons-round">arrow_forward_ios</span></button>'
 });
+$('.masters-carousel').slick({
+	dots: false,
+	speed: 300,
+	slidesToShow: 1,
+	prevArrow: '<button type="button" class="slick-prev"><span class="material-icons-round">arrow_back_ios</span></button>',
+	nextArrow: '<button type="button" class="slick-next"><span class="material-icons-round">arrow_forward_ios</span></button>',
+	responsive: [
+		{
+			breakpoint: 992,
+			settings: {
+				// dots: true,
+			}
+		}
+	]
+});
 $('.enterprise-carousel').slick({
 	dots: false,
 	speed: 300,
