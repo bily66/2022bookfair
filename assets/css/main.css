@@ -9345,8 +9345,8 @@ nav.fixed-top {
 }
 
 main {
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 @media (min-width: 992px) {
