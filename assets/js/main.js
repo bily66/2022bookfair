@@ -119,6 +119,5 @@ $(function () {
 		} else {
 			$('.bottombar').fadeOut();
 		}
-		console.log(scroll);
 	});
 });
