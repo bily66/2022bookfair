@@ -166,9 +166,6 @@
             @include media-breakpoint-up(lg) {
                 height: calc(1.125rem * 1.4 * 3);
             }
-            @include media-breakpoint-up(xl) {
-                height: calc(1.125rem * 1.4 * 2);
-            }
         }
     }
 }
