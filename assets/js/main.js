@@ -86,7 +86,7 @@ $('.masters-carousel').slick({
 		{
 			breakpoint: 992,
 			settings: {
-				// dots: true,
+				dots: true,
 			}
 		}
 	]
@@ -105,19 +105,4 @@ $('.enterprise-carousel').slick({
 			}
 		}
 	]
-});
-
-$('.bottombar').hide();
-$(function () {
-	let width = $(window).width();
-	let height = $(window).height();
-	let kvHeight = $('header.kv').outerHeight();
-	$(window).on('scroll', function () {
-		let scroll = $(window).scrollTop();
-		if ( scroll > kvHeight ) {
-			$('.bottombar').fadeIn();
-		} else {
-			$('.bottombar').fadeOut();
-		}
-	});
 });
