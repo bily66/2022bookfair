@@ -79,7 +79,9 @@ main {
         .share-item {
             background-color: rgba($white, 0.1);
             @include media-breakpoint-up(lg) {
-                &:nth-child(odd) {
+                &.order-lg-1,
+                &.order-lg-3,
+                &.order-lg-5 {
                     background-color: rgba($white, 0.2);
                 }
             }
