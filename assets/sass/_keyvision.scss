@@ -909,6 +909,9 @@ $circle-diameter-w: (100vw / 15);
                 @media screen and (max-width: 767px) {
                     font-size: 81.8%;
                 }
+                @media screen and (max-width: 413px) {
+                    font-size: 78%;
+                }
             }
         }
     }
