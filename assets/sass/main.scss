@@ -15,7 +15,7 @@ body {
 }
 
 nav.fixed-top {
-    background-color: rgba($black, 0.5);
+    background-color: rgba($violet, 0.5);
     backdrop-filter: blur(20px);
 }
 
@@ -77,12 +77,12 @@ main {
             }
         }
         .share-item {
-            background-color: rgba($white, 0.1);
+            background-color: rgba($white, 0.2);
             @include media-breakpoint-up(lg) {
                 &.order-lg-1,
                 &.order-lg-3,
                 &.order-lg-5 {
-                    background-color: rgba($white, 0.2);
+                    background-color: rgba($white, 0.1);
                 }
             }
             hr {
@@ -184,7 +184,7 @@ main {
                 margin-right: -0.5 * $circle-diameter;
                 z-index: 2;
                 &::before {
-                    background-color: #d80c18;
+                    background-color: #946f46;
                     opacity: 0.25;
                 }
             }
@@ -193,79 +193,69 @@ main {
                 margin-right: -0.5 * $circle-diameter;
                 z-index: 1;
                 &::before {
-                    background-image: linear-gradient(to right, #8c4984 0%, #be2074 100%);
+                    background-color: #946f46;
                 }
             }
             .kv-grid {
+                @include px2diameter(width, 134.9);
                 opacity: 0.7;
+                .line {
+                    background-color: #946f46;
+                }
                 .line-1 {
                     @include px2diameter(width, 4.8);
-                    background-color: #9e407f;
                 }
                 .line-2 {
                     @include px2diameter(width, 4.5);
                     @include px2diameter(margin-left, 5.5);
-                    background-color: #a63a7d;
                 }
                 .line-3 {
                     @include px2diameter(width, 4.2);
                     @include px2diameter(margin-left, 5.8);
-                    background-color: #ab377c;
                 }
                 .line-4 {
                     @include px2diameter(width, 3.8);
                     @include px2diameter(margin-left, 6.1);
-                    background-color: #b03179;
                 }
                 .line-5 {
                     @include px2diameter(width, 3.5);
                     @include px2diameter(margin-left, 6.5);
-                    background-color: #b22e78;
                 }
                 .line-6 {
                     @include px2diameter(width, 3.2);
                     @include px2diameter(margin-left, 6.8);
-                    background-color: #b62a77;
                 }
                 .line-7 {
                     @include px2diameter(width, 2.9);
                     @include px2diameter(margin-left, 7.1);
-                    background-color: #b82776;
                 }
                 .line-8 {
                     @include px2diameter(width, 2.6);
                     @include px2diameter(margin-left, 7.4);
-                    background-color: #ba2575;
                 }
                 .line-9 {
                     @include px2diameter(width, 2.2);
                     @include px2diameter(margin-left, 7.8);
-                    background-color: #bb2475;
                 }
                 .line-10 {
                     @include px2diameter(width, 2);
                     @include px2diameter(margin-left, 8.1);
-                    background-color: #bc2275;
                 }
                 .line-11 {
                     @include px2diameter(width, 1.6);
                     @include px2diameter(margin-left, 8.4);
-                    background-color: #bd2074;
                 }
                 .line-12 {
                     @include px2diameter(width, 1.3);
                     @include px2diameter(margin-left, 8.8);
-                    background-color: #bd2074;
                 }
                 .line-13 {
                     @include px2diameter(width, 1);
                     @include px2diameter(margin-left, 9);
-                    background-color: #be2074;
                 }
                 .line-14 {
                     @include px2diameter(width, 0.6);
                     @include px2diameter(margin-left, 9.4);
-                    background-color: #be2074;
                 }
             }
         }
@@ -282,7 +272,7 @@ main {
                 opacity: 0.7;
                 transform: scaleX(-1);
                 .line {
-                    background-color: #c42d27;
+                    background-color: #a97d5c;
                 }
                 .line-1 {
                     @include px2diameter(width, 7.5);
@@ -353,7 +343,7 @@ main {
                 }
             }
             .kv-circle::before {
-                background-color: #c42d27;
+                background-color: #a97d5c;
             }
             .kv-circle-1 {
                 width: 1.6 * $circle-diameter;
@@ -385,137 +375,116 @@ main {
                 margin-right: -0.5535 * $circle-diameter;
                 z-index: 1;
                 &::before {
-                    background-image: linear-gradient(to right, #00986e 0%, #00954c 100%);
+                    background-color: #a97d5c;
                 }
             }
             .kv-grid {
                 @include px2diameter(width, 257.1);
                 margin-right: -0.5 * $circle-diameter;
+                .line {
+                    background-color: #a97d5c;
+                }
                 .line-1 {
                     @include px2diameter(width, 10);
-                    background-color: #128e4a;
                 }
                 .line-2 {
                     @include px2diameter(width, 9.9);
                     @include px2diameter(margin-left, 1);
-                    background-color: #128e4a;
                 }
                 .line-3 {
                     @include px2diameter(width, 9.4);
                     @include px2diameter(margin-left, 1.4);
-                    background-color: #108e4f;
                 }
                 .line-4 {
                     @include px2diameter(width, 9);
                     @include px2diameter(margin-left, 1.7);
-                    background-color: #128e55;
                 }
                 .line-5 {
                     @include px2diameter(width, 8.6);
                     @include px2diameter(margin-left, 2.1);
-                    background-color: #148e59;
                 }
                 .line-6 {
                     @include px2diameter(width, 8.2);
                     @include px2diameter(margin-left, 2.6);
-                    background-color: #178e5f;
                 }
                 .line-7 {
                     @include px2diameter(width, 7.8);
                     @include px2diameter(margin-left, 3);
-                    background-color: #168e65;
                 }
                 .line-8 {
                     @include px2diameter(width, 7.4);
                     @include px2diameter(margin-left, 3.4);
-                    background-color: #188e6b;
                 }
                 .line-9 {
                     @include px2diameter(width, 7);
                     @include px2diameter(margin-left, 3.8);
-                    background-color: #1b8f70;
                 }
                 .line-10 {
                     @include px2diameter(width, 6.5);
                     @include px2diameter(margin-left, 4.3);
-                    background-color: #1a8f76;
                 }
                 .line-11 {
                     @include px2diameter(width, 6);
                     @include px2diameter(margin-left, 4.7);
-                    background-color: #1e8e7b;
                 }
                 .line-12 {
                     @include px2diameter(width, 5.6);
                     @include px2diameter(margin-left, 5.1);
-                    background-color: #208e81;
                 }
                 .line-13 {
                     @include px2diameter(width, 5.2);
                     @include px2diameter(margin-left, 5.5);
-                    background-color: #208e87;
                 }
                 .line-14 {
                     @include px2diameter(width, 4.8);
                     @include px2diameter(margin-left, 6);
-                    background-color: #268e8d;
                 }
                 .line-15 {
                     @include px2diameter(width, 4.4);
                     @include px2diameter(margin-left, 6.4);
-                    background-color: #2d8e92;
                 }
                 .line-16 {
                     @include px2diameter(width, 3.9);
                     @include px2diameter(margin-left, 6.8);
-                    background-color: #308e98;
                 }
                 .line-17 {
                     @include px2diameter(width, 3.5);
                     @include px2diameter(margin-left, 7.2);
-                    background-color: #368f9c;
                 }
                 .line-18 {
                     @include px2diameter(width, 3.1);
                     @include px2diameter(margin-left, 7.6);
-                    background-color: #3c8da1;
                 }
                 .line-19 {
                     @include px2diameter(width, 2.7);
                     @include px2diameter(margin-left, 8.1);
-                    background-color: #408da6;
                 }
                 .line-20 {
                     @include px2diameter(width, 2.2);
                     @include px2diameter(margin-left, 8.5);
-                    background-color: #468daa;
                 }
                 .line-21 {
                     @include px2diameter(width, 1.8);
                     @include px2diameter(margin-left, 8.9);
-                    background-color: #4b8daf;
                 }
                 .line-22 {
                     @include px2diameter(width, 1.4);
                     @include px2diameter(margin-left, 9.3);
-                    background-color: #4e8cb3;
                 }
                 .line-23 {
                     @include px2diameter(width, 1);
                     @include px2diameter(margin-left, 9.8);
-                    background-color: #5c93cc;
                 }
                 .line-24 {
                     @include px2diameter(width, 0.5);
                     @include px2diameter(margin-left, 10);
-                    background-color: #5c93cc;
                 }
             }
             .kv-circle-2 {
                 width: $circle-diameter;
                 &::before {
-                    background-color: #5c93cc;
-                    opacity: 0.25;
+                    background-color: #a97d5c;
+                    opacity: 0.3;
                 }
             }
         }
@@ -523,7 +492,7 @@ main {
 }
 
 .bottombar {
-    background-image: linear-gradient(to right, #2d5b94 0%, #ce1b7d 56%);
+    // background-image: linear-gradient(to right, #2d5b94 0%, #ce1b7d 56%);
     z-index: 5;
     &:hover .btn-light {
         color: $white;
